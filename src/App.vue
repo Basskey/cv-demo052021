@@ -31,9 +31,9 @@ export default {
   data() {
     return {
       contacts: [
-        {id: 1,username: 'John',eMail: 'john_connor@skynet.com'},
-        {id: 2,username: 'Sarah',eMail: 'sarah_connor@mail.com'},
-        {id: 3,username: 'Egor',eMail: 'egorletov@vseidetpoplanu.ru'}
+        {id: 1,username: 'John',email: 'john_connor@skynet.com'},
+        {id: 2,username: 'Sarah',email: 'sarah_connor@mail.com'},
+        {id: 3,username: 'Egor',email: 'egorletov@vseidetpoplanu.ru'}
       ]
     }
   },

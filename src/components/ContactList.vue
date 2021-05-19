@@ -1,7 +1,11 @@
 <template>
   <div class="wrapper">
+    <NewContactForm
+        @add-contact="addContact"
+    />
+
     <h2 class="title">Contact List</h2>
-    <button v-on:click="addItem()">Add new</button>
+    <button v-on:click="initAddForm()">Add new</button>
 
     <ul class="contact-list">
       <ContactListItem
@@ -10,24 +14,28 @@
         v-on:remove-item="removeItem"
       />
     </ul>
+
   </div>
 </template>
 
 <script>
-  import ContactListItem from '@/components/ContactListItem'
+  import ContactListItem from '@/components/ContactListItem';
+  import NewContactForm from '@/components/NewContactForm'
 
   export default {
     props: ['contacts'],
     components: {
-      ContactListItem
+      ContactListItem,
+      NewContactForm
     },
 
     methods: {
-      addItem(){
-        let funnyPeople = [{id: 4, username: 'Donald Duck', eMail: 'puckyou@mail.duck'}]
-        funnyPeople.forEach(name => {
-          this.contacts.push(name);
-        });
+      initAddForm(){
+
+      },
+
+      addContact(contact) {
+        this.contacts.push(contact)
       },
 
       removeItem(id) {
