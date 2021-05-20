@@ -1,11 +1,8 @@
 <template>
   <div class="wrapper">
-    <NewContactForm
-        @add-contact="addContact"
-    />
-
     <h2 class="title">Contact List</h2>
-    <button v-on:click="initAddForm()">Add new</button>
+
+    <NewContactForm @add-contact="addContact" />
 
     <ul class="contact-list">
       <ContactListItem
@@ -24,15 +21,13 @@
 
   export default {
     props: ['contacts'],
+
     components: {
       ContactListItem,
       NewContactForm
     },
 
     methods: {
-      initAddForm(){
-
-      },
 
       addContact(contact) {
         this.contacts.push(contact)

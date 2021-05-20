@@ -2,24 +2,21 @@
   <div id="app">
     <div class="layout">
       <h1 class="layout-header">CV-Demo #052021</h1>
-      <ContactList
-        v-bind:contacts="contacts"
-        @remove-item="removeItem"
-      />
+      <ContactDetails v-bind:person="contacts[0]" />
     </div>
   </div>
 </template>
 
 <script>
 import ContactList from '@/components/ContactList';
-// import ContactDetails from '@/components/ContactDetails';
+import ContactDetails from '@/components/ContactDetails';
 
 export default {
   name: 'App',
 
   components: {
     ContactList,
-    // ContactDetails
+    ContactDetails
   },
 
   methods: {
@@ -31,9 +28,9 @@ export default {
   data() {
     return {
       contacts: [
-        {id: 1,username: 'John',email: 'john_connor@skynet.com'},
-        {id: 2,username: 'Sarah',email: 'sarah_connor@mail.com'},
-        {id: 3,username: 'Egor',email: 'egorletov@vseidetpoplanu.ru'}
+        {id: 1,username: 'John',email: 'john_connor@skynet.com',customFields: [{fieldName:'Custom kek',fieldValue:'Cheburek'},{fieldName:'Sasai',fieldValue:'Lalka'}]},
+        {id: 2,username: 'Sarah',email: 'sarah_connor@mail.com',customFields: [{fieldName:'',fieldValue:''}]},
+        {id: 3,username: 'Egor',email: 'egorletov@vseidetpoplanu.ru',customFields: [{fieldName:'',fieldValue:''}]}
       ]
     }
   },
@@ -55,4 +52,9 @@ export default {
     margin: 1px;
   }
 }
+
+//<ContactList
+// v-bind:contacts="contacts"
+//@remove-item="removeItem"
+///>
 </style>

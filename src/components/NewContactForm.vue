@@ -5,10 +5,10 @@
       <input type="text" id="username" v-model="username">
     </div>
     <div>
-      <label for="username">E-mail:</label>
+      <label for="email">E-mail:</label>
       <input type="email" id="email" v-model="email">
     </div>
-    <button type="submit">add</button>
+    <button type="submit">Add contact</button>
   </form>
 </template>
 
@@ -23,8 +23,6 @@
 
     methods: {
       onSubmit() {
-        console.log('Username: ' + this.username);
-        console.log('Email: ' + this.email);
 
         if (this.username.trim() && this.email.trim()) {
           const newContact = {
@@ -45,10 +43,11 @@
 
 <style lang="scss">
   .new-contact-form {
-    //position: fixed;
     display: flex;
     flex-direction: column;
     top: 0;
-    width: 100%;
+    margin: 1px;
+    padding: 1px;
+    border: 1px dotted;
   }
 </style>
