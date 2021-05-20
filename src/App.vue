@@ -2,7 +2,9 @@
   <div id="app">
     <div class="layout">
       <h1 class="layout-header">CV-Demo #052021</h1>
-      <ContactDetails v-bind:person="contacts[0]" />
+      <router-view
+          v-bind:contacts="contacts"
+          @remove-item="removeItem"/>
     </div>
   </div>
 </template>
@@ -51,10 +53,12 @@ export default {
     padding: 1px;
     margin: 1px;
   }
-}
 
 //<ContactList
-// v-bind:contacts="contacts"
+//v-bind:contacts="contacts"
 //@remove-item="removeItem"
 ///>
+//<hr>
+//<ContactDetails v-bind:person="contacts[0]" />
+}
 </style>
