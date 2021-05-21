@@ -15,6 +15,7 @@ export default new Router({
         {
             path: '/contact-details:id',
             component: ContactDetails,
+            name: 'contactDetails',
             props: true
         }
     ]

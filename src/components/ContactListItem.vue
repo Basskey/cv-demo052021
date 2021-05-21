@@ -2,7 +2,7 @@
   <li class="contact-list__item">
     <span>{{ person.username }}</span>
     <div class="controls-container">
-      <button><router-link :to="linkPath" v-bind:person="person">View</router-link></button>
+      <button><router-link :to="linkPath">View</router-link></button>
       <button v-on:click="$emit('remove-item', person.id)">&times</button>
     </div>
   </li>

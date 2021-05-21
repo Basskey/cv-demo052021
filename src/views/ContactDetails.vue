@@ -2,9 +2,9 @@
   <div class="wrapper">
     <h2>Username Details:</h2>
     <div class="fields-container">
-      <div class="field">Name: {{ person.username }}</div>
-      <div class="field">E-mail: {{  person.email }}</div>
-      <div class="field" v-for="customField of person.customFields">
+      <div class="field">Name: {{ contacts[0].username }}</div>
+      <div class="field">E-mail: {{  contacts[0].email }}</div>
+      <div class="field" v-for="customField of contacts[0].customFields">
         {{customField.fieldName}}: {{customField.fieldValue}}
       </div>
       <form class="new-fields-form" @submit.prevent="onSubmit">
@@ -25,8 +25,8 @@
 <script>
   export default {
     props: {
-      person: {
-        type: Object,
+      contacts: {
+        type: Array,
         required: true
       }
     },
@@ -46,7 +46,7 @@
             fieldValue: this.fieldValue
           }
 
-          this.person.customFields.push(newField);
+          this.contacts[0].customFields.push(newField);
 
           this.fieldName='';
           this.fieldValue=''
